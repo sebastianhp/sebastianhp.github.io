@@ -1,0 +1,107 @@
+<html>
+<html lang="en">
+<head>
+        <title>NFL score analysis</title>
+</head>
+
+<body>
+        <p>
+        Something you always hear about is how home teams tend to have 
+        the advantage in a game. I checked Reddit to see if anyone had posted 
+        anything on this but the closest I got were analyses of 
+        <a href="https://old.reddit.com/r/dataisbeautiful/comments/4p71fe/every_nfl_score_that_hashas_never_occurred_ocos/">
+                nfl scores that have never ocurred
+        </a> and a 
+        <a href="https://old.reddit.com/r/nfl/comments/1vyjqb/visualization_of_scores_from_every_nfl_game_ever/">
+                bare distribution of scores
+        </a>, and so I decided to do some quantitative analysis of my own.
+        </p>
+
+        <p>
+          <br><br>
+          I looked at every professional football score from 1920 till 
+          today and 
+          <a href="https://i.imgur.com/uSTL3QB.png">
+                  plotted the distribution.
+          </a> 
+        </p>
+
+        <img src="https://i.imgur.com/uSTL3QB.png" alt="Full distribution"
+            width="700">
+
+        <p>
+          The gray diagonal indicates ties, and if home field advantage had 
+          no effect on the outcome we would expect the weighted average of 
+          the scores to lie on this line. However, as shown, the weighted 
+          average actually sits at (away points, home points) = (18.4, 21.5). 
+          From this graph I also define home field advantage to be the distance 
+          between the weighted average and the diagonal (I'd love to hear 
+          people's ideas on how else to quantify home field advantage). 
+          This distance comes out to be very close to 2 points. 
+        <a href="https://i.imgur.com/jqnahGa.jpg">
+                Below is an inset of the distribution
+        </a>
+         which gives a better sense for the structure of the distribution 
+        </p>
+        
+        <img src="https://i.imgur.com/jqnahGa.jpg" alt="Distribution inset"
+            width="700">
+
+        <p>
+        <br><br>I also looked at the <a href="https://i.imgur.com/OzCHZUF.png">
+                point differential density function (right axis)</a>.
+        </p>
+
+        <img src="https://i.imgur.com/OzCHZUF.png" alt="Point differential
+            density function" width="700">
+        
+        <p>
+        For a given point differential, this computes 
+        (home wins - away wins)/total games. Therefore, the range of values 
+        that this can take on fall between -1 and 1. If the home (away) team 
+        always wins then this graph would be constantly 1 (-1), whereas if 
+        home field advantage had no effect we would expect a flatline at 0. 
+        For all point differentials the home team manages to get the advantage. 
+        I also overlaid a plot of the total number of games that have ocurred at 
+        a given point differential (left axis), which gives an idea of the 
+        effect of normalization on each point (note that I normalize by the 
+        total games at that point differential, NOT total games for all point 
+        differentials). For this plot I ignore point differentials that ocurred 
+        less than 5 times (which conveniently end up being point differentials 
+        above 50).
+        </p>
+
+        <p>
+        <br><br>Lastly I look at the 
+        <a href="https://i.imgur.com/Uagxb1v.png">
+                distribution of what I call the symmetric element ratios
+        </a>. 
+        </p>
+
+        <img src="https://i.imgur.com/Uagxb1v.png" alt="Symmetric element ratios"
+            width="700">
+
+        <p>
+        For this plot I sum the elements that are symmetric about the 
+        diagonal (e.g. (17,20) + (20,17)), and then divide these elements by 
+        that sum. From this plot we get an idea of how frequent certain scores 
+        are relative to home vs away outcome. What's interesting about this 
+        plot is that it highlights how very lopsided games tend to very 
+        strongly favor the home team, for example how shutouts are almost 
+        always by home teams.
+        </p>
+
+        <p>
+        <br><br>So overall, I would say that the home team has a definitive 
+        quantitative advantage. 
+        <a href="https://old.reddit.com/r/nfl/comments/5oqhrl/how_much_does_homefield_advantage_help_you/">
+                Take that Bill...
+        </a>
+        </p>
+
+        <p>
+        <br><br>If you made it this far thanks for reading! 
+        I used Pro-Football-Reference as my source.
+        </p>
+</body>
+</html>
