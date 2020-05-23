@@ -1,0 +1,40 @@
+body {
+        background-color:#fdf6e3;
+        color:#657b83;
+} 
+
+h1, h2 {
+        color:#586e75;
+}
+
+p {
+        font-size: 18px;
+}
+
+ol {
+        font-size: 18px;
+}
+
+/* unvisited link */
+a:link {
+  color:#268bd2;
+}
+
+/* visited link */
+a:visited {
+  color:#cb4b16;
+}
+
+/* mouse over link */
+a:hover {
+  color:#d33682;
+}
+
+/* selected link */
+a:active {
+  color:#d33682;
+} 
+
+.bcolor {
+        color:#6c71c4;
+}
