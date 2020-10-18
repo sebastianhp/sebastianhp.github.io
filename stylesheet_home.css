@@ -9,6 +9,10 @@ p {
         font-weight:bold;
 }
 
+h1,h2,h3 {
+        color:#b58900;
+}
+
 /* unvisited link */
 a:link {
   color:#268bd2;
