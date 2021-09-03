@@ -2,11 +2,15 @@ body {
         background-color:#002b36;
         color:#839496;
         font-family: "Courier New", Courier, monospace;
-} 
+}
 
 p {
-        font-size: 18px;
+        font-size: 1.25em;
         font-weight:bold;
+}
+
+h1,h2,h3 {
+        color:#b58900;
 }
 
 /* unvisited link */
@@ -28,3 +32,11 @@ a:hover {
 a:active {
   color:#d33682;
 } 
+
+footer {
+        text-align: center;
+        font-size: 0.75em;
+        font-weight: normal;
+        font-family: "Courier New", Courier, monospace;
+        color: #586e75;
+}

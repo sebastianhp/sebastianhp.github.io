@@ -8,11 +8,11 @@ h1, h2 {
 }
 
 p {
-        font-size: 18px;
+        font-size: 1.25em;
 }
 
 ol {
-        font-size: 18px;
+        font-size: 1.25em;
 }
 
 /* unvisited link */
@@ -34,6 +34,14 @@ a:hover {
 a:active {
   color:#d33682;
 } 
+
+footer {
+        text-align: center;
+        font-size: 0.75em;
+        font-weight: normal;
+        font-family: "Courier New", Courier, monospace;
+        color: #586e75;
+}
 
 .bcolor {
         color:#6c71c4;
