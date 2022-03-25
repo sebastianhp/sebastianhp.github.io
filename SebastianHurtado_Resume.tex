@@ -1,0 +1,175 @@
+%-------------------------
+% Resume in Latex
+% Author  : Sebastian Hurtado Parra
+% Template: Tweaked from https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex, colorlinks=true, allcolors={blue}, linkbordercolor={1 1 1}]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{bold-extra}
+\usepackage{amssymb}
+\usepackage[margin=0.5in]{geometry}
+
+%Change the font
+\usepackage{bookman}
+\usepackage[T1]{fontenc}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.375in}
+%\addtolength{\evensidemargin}{-0.375in}
+%\addtolength{\textwidth}{1in}
+%\addtolength{\topmargin}{-.5in}
+%\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+\newcommand{\resumeItemTitledYear}[3]{
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#2}{: \small #3 \vspace{-2pt}} & \textit{#1}
+  \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeItemTitled}[2]{
+  \item{
+    \textbf{#1}{: \small #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItemTitled{#1}{#2}\vspace{-4pt}}
+
+%\renewcommand{\labelitemi}{\tiny $\blacksquare$}
+\renewcommand{\labelitemi}{}
+\renewcommand{\labelitemii}{\tiny $\square$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r@{\hspace{5pt}}l}
+  \textsc{\textbf{\huge Sebastian Hurtado Parra}} & {\small Email:} & {\small \href{mailto:hseb@sas.upenn.edu}{hseb@sas.upenn.edu}}\\
+  Philadelphia, PA & \small{Cell:} & \small{(302) 507-2482} \\
+   & {\small LinkedIn:} & {\small \href{https://linkedin.com/in/sebastianhurtadoparra}{linkedin.com/in/sebastianhurtadoparra}}
+\end{tabular*}
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Research Assistant}{Philadelphia, PA}
+      {University of Pennsylvania}{2016 - present}
+      \resumeItemListStart
+        \resumeItem{Built a novel ultrafast spectroscopy detection scheme requiring low-level C/LabVIEW programming using instrument drivers, optimizing signal/noise metric by over 100x, and reducing collection time by 10x}
+        \resumeItem{Designed and deployed an end-to-end LabVIEW framework to suppress laser noise, increasing a stability metric by over 20x}
+        \resumeItem{Performed custom nonlinear regression analysis on data, and incorporated signal transformation and data cleaning pipelines in Python and LabVIEW using e.g. singular value decomposition}
+        \resumeItem{Developed real-time image analysis LabVIEW software including gradient descent minimization of image overlap, which reduced storage cost by 100x, and improved data collection time and quality by 2x}
+        \resumeItem{Collaborated with various research groups both within and outside the university to create custom measurement solutions and solve complex research problems, leading to 7 peer-reviewed publications}
+        \resumeItem{Managed day-to-day lab operations, mentored junior students, and communicated with principal investigator and colleagues}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Teaching Assistant}{Philadelphia, PA}
+      {University of Pennsylvania, Saint Joseph's University}{2013 - 2017}
+      \resumeItemListStart
+        \resumeItem{Planned and implemented weekly lesson plans for groups of 20-30 undergraduate students}
+        \resumeItem{Guided students through lab procedures and led group study sessions}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%
+%--------SKILLS------------
+\section{Skills}
+ \resumeSubHeadingListStart
+    \resumeSubItem{Languages}
+      {(Proficient) Python, LabVIEW; (Basic) Bash, C/C++, Java, SQL}
+    \resumeSubItem{Tools}
+      {Linux sysadmin, Git, Jupyter, Numpy, Matplotlib, Pandas, Scikit-Learn, \LaTeX}
+    \resumeSubItem{Linguistic}
+      {Native fluency in English and Spanish}
+ \resumeSubHeadingListEnd
+
+%-----------PROJECTS/OTHER-----------------
+\section{Projects/Other}
+  \resumeSubHeadingListStart
+    \resumeSubItem{eyeHUD}
+      {Smart window application for bright object occlusion, utilizing OpenCV facial recognition. Won 3rd place at PennApps XIV \footnotesize (\href{https://devpost.com/software/eyehud}{{devpost.com/software/eyehud}})}
+    \resumeSubItem{Cryptoino}
+      {Lightweight cryptographic key exchange using tree parity machine neural networks, aimed at low-power embedded devices. Top 30 at PennApps XV \footnotesize (\href{https://devpost.com/software/cryptoino-4ax1tk}{{devpost.com/software/cryptoino-4ax1tk}})}
+    \resumeSubItem{NFL scores}
+      {Quantitative analysis on the effect of home field advantage in the NFL. Utilized Python for web scraping and data analysis \footnotesize (\href{https://sebastianhp.com/NFL_HomeFieldAdvantage.html}{sebastianhp.com/NFL\_HomeFieldAdvantage.html})}
+    \resumeSubItem{MatTrack}
+      {Particle tracking MATLAB library developed in undergrad research \footnotesize (\href{https://github.com/ryanstull/MatTrack}{{github.com/ryanstull/MatTrack}})}
+  \resumeSubHeadingListEnd
+
+%
+%--------Awards & Honors------------
+\section{Awards \& Honors}
+ \resumeSubHeadingListStart
+    \resumeItemTitledYear{2019}{UPenn}{Arnold M. Denenstein Prize \footnotesize (\href{https://physics.upenn.edu/index.php/news/sas-student-prizes-and-awards}{{physics.upenn.edu/index.php/news/sas-student-prizes-and-awards}})}
+    \resumeItemTitledYear{2017}{PennApps XV}{Cryptoino, Top 30}
+    \resumeItemTitledYear{2016}{PennApps XIV}{eyeHUD, 3rd Place \& Winner of Best Public Safety or Video Processing App}
+ \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Pennsylvania}{Philadelphia, PA}
+      {Ph.D. in Physics}{expected May 2022}
+    \resumeSubheading
+      {Saint Joseph's University}{Philadelphia, PA}
+      {B.S. in Physics and Mathematics}{May 2015}
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
