@@ -14,6 +14,7 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
+\usepackage{makecell}
 \usepackage[pdftex, 
             colorlinks=true, allcolors={blue}, linkbordercolor={1 1 1},
             pdfusetitle,
@@ -49,7 +50,7 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{5pt}\scshape\raggedright\large
+  \vspace{3pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 %-------------------------
@@ -90,6 +91,8 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+\newcommand{\aboutMe}{\footnotesize \makecell[t{p{4.2in}}]{Data scientist with Physics Ph.D. background. Looking to build end-to-end data-driven frameworks to solve business problems}}
+
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -100,9 +103,9 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r@{\extracolsep{4pt}}l}
-  \textsc{\textbf{\huge Sebastian Hurtado Parra}} & {\small Email:} & {\small \href{mailto:hseb@sas.upenn.edu}{hseb@sas.upenn.edu}}\\
+  \textsc{\textbf{\LARGE Sebasti{\'a}n Hurtado Parra, Ph.D.}} & {\small Email:} & {\small \href{mailto:hseb@sas.upenn.edu}{sebastianh25@gmail.com}}\\
   Philadelphia, PA & \small{Cell:} & \small{(xxx) xxx\textendash xxxx} \\
-   & {\small LinkedIn:} & {\small \href{https://linkedin.com/in/sebastian-hp}{linkedin.com/in/sebastian-hp}}
+  & {\small LinkedIn:} & {\small \href{https://linkedin.com/in/sebastian-hp}{linkedin.com/in/sebastian-hp}}
 \end{tabular*}
 
 %-----------EXPERIENCE-----------------
@@ -110,23 +113,25 @@
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Research Assistant}{Philadelphia, PA}
-      {University of Pennsylvania}{2016\textendash present}
+      {Data Scientist}{Philadelphia, PA}
+      {Axalta Coating Systems}{2022\textendash present}
       \resumeItemListStart
-        \resumeItem{Built a novel ultrafast spectroscopy detection scheme requiring low-level C/LabVIEW programming using instrument drivers, optimizing signal/noise metric by over 100x, and reducing collection time by 10x}
-        \resumeItem{Designed and deployed an end-to-end LabVIEW framework to suppress laser noise, increasing a stability metric by over 20x}
-        \resumeItem{Performed custom nonlinear regression analysis on data, and incorporated signal transformation and data cleaning pipelines in Python and LabVIEW using e.g. singular value decomposition}
-        \resumeItem{Developed real-time image analysis LabVIEW software including gradient descent minimization of image overlap, which reduced storage cost by 100x, and improved data collection time and quality by 2x}
-        \resumeItem{Collaborated with various research groups both within and outside the university to create custom measurement solutions and solve complex research problems, leading to 7 peer-reviewed publications}
-        \resumeItem{Managed day-to-day lab operations, mentored junior students, and communicated with principal investigator and colleagues}
+        \resumeItem{Supported first principles and neural network models used in customer-facing production environments, including data querying/cleaning pipelines from chemical formulation databases and model training routines}
+        \resumeItem{Developed computer vision algorithms for colored texture recognition, aimed at embedded system deployment in upcoming commercially available instrumentation for customers}
+        \resumeItem{Created data management and visualization tools for in-house and customer systems}
+        \resumeItem{Communicated business impact of technical achievements with stakeholders across business segments}
+        %- Supported training existing NNs used in production, which includes creating custom data querying and cleaning pipelines from various sources
+        %- Black and White sparkle emulation model
+        %- Developed computer vision algorithms for Togo, concentrating on memory and computational limits for production
       \resumeItemListEnd
 
     \resumeSubheading
-      {Teaching Assistant}{Philadelphia, PA}
-      {University of Pennsylvania, Saint Joseph's University}{2013\textendash 2017}
+      {Research Assistant}{Philadelphia, PA}
+      {University of Pennsylvania}{2016\textendash 2022}
       \resumeItemListStart
-        \resumeItem{Planned and implemented weekly lesson plans for groups of 20-30 undergraduate students}
-        \resumeItem{Guided students through lab procedures and led group study sessions}
+        \resumeItem{Performed custom nonlinear regression analysis on data, and incorporated signal transformation and data cleaning pipelines in Python and LabVIEW using e.g. singular value decomposition}
+        \resumeItem{Developed real-time image analysis LabVIEW software including gradient descent minimization of image overlap, which reduced storage cost by 100x, and improved data collection time and quality by 2x}
+        \resumeItem{Collaborated with research groups within and outside the university to create custom measurement solutions and solve complex research problems, leading to 8 peer-reviewed publications}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -137,9 +142,12 @@
 \section{Skills}
  \resumeSubHeadingListStart
     \resumeSubItem{Languages}
-      {(Proficient) Python, LabVIEW; (Basic) Bash, C/C++, Java, SQL}
+      {(Proficient) Python, LabVIEW; (Basic) Bash, C/C++, MATLAB, Java, SQL}
     \resumeSubItem{Tools}
-      {Linux sysadmin, Git, Jupyter, Numpy, Matplotlib, Pandas, Scikit-Learn, \LaTeX}
+      {(Proficient) Git, Matplotlib, Numpy, Pandas, Scikit-Learn, Scipy, \LaTeX, Linux sysadmin; \\
+      (Basic) OpenCV, TensorFlow/Keras, Flask}
+    \resumeSubItem{Other}
+      {Hypothesis testing, experimental design, numerical methods}
     \resumeSubItem{Linguistic}
       {Native fluency in English and Spanish}
  \resumeSubHeadingListEnd
@@ -151,10 +159,10 @@
       {Smart window application for bright object occlusion, utilizing Python OpenCV facial recognition. Won 3rd place at PennApps XIV \footnotesize (\href{https://devpost.com/software/eyehud}{{devpost.com/software/eyehud}})}
     \resumeSubItem{Cryptoino}
       {Lightweight cryptographic key exchange using tree parity neural networks for low-power devices. Prototyped with Python, deployed in C. Top 30 at PennApps XV \footnotesize (\href{https://devpost.com/software/cryptoino-4ax1tk}{{devpost.com/software/cryptoino-4ax1tk}})}
-    \resumeSubItem{NFL scores}
+    \resumeSubItem{NFL Scores}
       {Quantitative analysis on effect of home field advantage in the NFL. Built Python data pipeline incorporating web scraping, data analysis, and visualization \footnotesize (\href{https://sebastianhp.com/NFL_HomeFieldAdvantage.html}{sebastianhp.com/NFL\_HomeFieldAdvantage.html})}
     \resumeSubItem{MatTrack}
-      {Particle tracking MATLAB library developed as part of undergraduate research project \footnotesize (\href{https://github.com/sebastianhp/MatTrack}{{github.com/sebastianhp/MatTrack}})}
+      {Particle tracking image analysis MATLAB library developed as part of undergraduate research project \footnotesize (\href{https://github.com/sebastianhp/MatTrack}{{github.com/sebastianhp/MatTrack}})}
   \resumeSubHeadingListEnd
 
 %
@@ -171,7 +179,7 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {University of Pennsylvania}{Philadelphia, PA}
-      {Ph.D. in Physics}{expected May 2022}
+      {Ph.D. in Physics}{June 2022}
     \resumeSubheading
       {Saint Joseph's University}{Philadelphia, PA}
       {B.S. in Physics and Mathematics}{May 2015}
