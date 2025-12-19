@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music League Stats</title>
+  <style>
+    :root {
+      --bg: #0f172a;        /* slate-900 */
+      --card: #111827;      /* gray-900 */
+      --muted: #94a3b8;     /* slate-400 */
+      --text: #e5e7eb;      /* gray-200 */
+      --accent: #22c55e;    /* green-500 */
+      --row: #020617;       /* slate-950 */
+      --border: #1f2937;    /* gray-800 */
+    }
+
+    * { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 20% -10%, #1f2937, transparent), var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  padding: 24px;
+}
+
+.page-header {
+  max-width: 1600px;
+  margin: 0 auto 32px;
+  padding: 0 4px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.page-header p {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+
+.leaderboard-grid {
+  width: 100%;
+  max-width: 1600px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+/* Let leaderboards size naturally */
+.leaderboard {
+  max-width: none;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  .leaderboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .leaderboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+    .leaderboard {
+      width: 100%;
+      max-width: 900px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.0)) , var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,.4);
+      overflow: hidden;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: .3px;
+    }
+
+    .subtitle {
+      font-size: .875rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #020617;
+      color: var(--muted);
+      font-size: .75rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead th {
+      text-align: left;
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      padding: 12px 16px;
+      background: #020617;
+      border-bottom: 1px solid var(--border);
+    }
+
+    tbody tr {
+      background: transparent;
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(255,255,255,0.02);
+    }
+
+    tbody tr:hover {
+      background: rgba(34,197,94,0.06);
+    }
+
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    .meta {
+      font-size: .75rem;
+      color: var(--muted);
+    }
+
+    .footer {
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .75rem;
+      color: var(--muted);
+      background: #020617;
+    }
+
+    @media (max-width: 640px) {
+      .meta { display: none; }
+      .controls { display: none; }
+    }
+  </style>
+</head>
+
+<header class="page-header">
+  <h1>🅱️eats with the 🅱️oys™ Official Stats</h1>
+  <p>Last updated: Round 22</p>
+</header>
+
+
+<body>
+<main class="leaderboard-grid">
+  <section class="leaderboard">
+    <div class="header">
+      <div>
+        <div class="title">Besties/Worsties</div>
+        <div class="subtitle">Who each voter likes the most/least</div>
+      </div>
+    </div>
+
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>voter</th>
+      <th>bestie</th>
+      <th>worstie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Brett Brandes</td>
+      <td>milesradzzz</td>
+      <td>nponta01</td>
+    </tr>
+    <tr>
+      <td>Joe Magz</td>
+      <td>ericmongeau</td>
+      <td>Sean Dolan</td>
+    </tr>
+    <tr>
+      <td>Patrick McCluskey</td>
+      <td>milesradzzz</td>
+      <td>nponta01</td>
+    </tr>
+    <tr>
+      <td>Ryan Stull</td>
+      <td>Joe Magz</td>
+      <td>milesradzzz</td>
+    </tr>
+    <tr>
+      <td>Sean Dolan</td>
+      <td>Joe Magz</td>
+      <td>Patrick McCluskey</td>
+    </tr>
+    <tr>
+      <td>ericmongeau</td>
+      <td>Ryan Stull</td>
+      <td>Sean Dolan</td>
+    </tr>
+    <tr>
+      <td>milesradzzz</td>
+      <td>Joe Magz</td>
+      <td>Patrick McCluskey</td>
+    </tr>
+    <tr>
+      <td>nponta01</td>
+      <td>ericmongeau</td>
+      <td>Patrick McCluskey</td>
+    </tr>
+    <tr>
+      <td>shp</td>
+      <td>Sean Dolan</td>
+      <td>milesradzzz</td>
+    </tr>
+  </tbody>
+</table>
+
+  </section>
+
+
+  <section class="leaderboard">
+    <div class="header">
+      <div>
+        <div class="title">Blabbermouth</div>
+        <div class="subtitle">Most characters in comments</div>
+      </div>
+    </div>
+
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Voter</th>
+      <th>Comments length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>milesradzzz</td>
+      <td>992</td>
+    </tr>
+    <tr>
+      <td>Brett Brandes</td>
+      <td>432</td>
+    </tr>
+    <tr>
+      <td>shp</td>
+      <td>387</td>
+    </tr>
+  </tbody>
+</table>
+
+  </section>
+
+
+  <section class="leaderboard">
+    <div class="header">
+      <div>
+        <div class="title">I got nut'n to say</div>
+        <div class="subtitle">Least characters in comments</div>
+      </div>
+    </div>
+
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Voter</th>
+      <th>Comments length</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Joe Magz</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <td>ericmongeau</td>
+      <td>128</td>
+    </tr>
+    <tr>
+      <td>Patrick McCluskey</td>
+      <td>150</td>
+    </tr>
+  </tbody>
+</table>
+
+  </section>
+
+
+  <section class="leaderboard">
+    <div class="header">
+      <div>
+        <div class="title">MIA</div>
+        <div class="subtitle">Most missed submissions</div>
+      </div>
+    </div>
+
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Player</th>
+      <th>Missed song submissions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>nponta01</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>Patrick McCluskey</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Joe Magz</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+
+  </section>
+
+
+  <section class="leaderboard">
+    <div class="header">
+      <div>
+        <div class="title">IDGAF</div>
+        <div class="subtitle">Most missed votes</div>
+      </div>
+    </div>
+
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Player</th>
+      <th>Missed vote submissions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>nponta01</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Patrick McCluskey</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>shp</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+
+  </section>
+
+
+  <section class="leaderboard">
+    <div class="header">
+      <div>
+        <div class="title">Crowd pleaser</div>
+        <div class="subtitle">Submitter with highest average number of distinct voters</div>
+      </div>
+    </div>
+
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Submitter</th>
+      <th>Average # of voters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>nponta01</td>
+      <td>5.33</td>
+    </tr>
+    <tr>
+      <td>Joe Magz</td>
+      <td>5.14</td>
+    </tr>
+    <tr>
+      <td>Brett Brandes</td>
+      <td>5.00</td>
+    </tr>
+  </tbody>
+</table>
+
+  </section>
+
+
+  <section class="leaderboard">
+    <div class="header">
+      <div>
+        <div class="title">I like a lil bit of everything</div>
+        <div class="subtitle">Voter with the lowest average of votes given per song</div>
+      </div>
+    </div>
+
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Voter</th>
+      <th>Average votes/song</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Joe Magz</td>
+      <td>1.66</td>
+    </tr>
+    <tr>
+      <td>ericmongeau</td>
+      <td>1.78</td>
+    </tr>
+    <tr>
+      <td>milesradzzz</td>
+      <td>1.80</td>
+    </tr>
+  </tbody>
+</table>
+
+  </section>
+
+
+  <section class="leaderboard">
+    <div class="header">
+      <div>
+        <div class="title">Strong opinions</div>
+        <div class="subtitle">Voter with the highest average of votes given per song</div>
+      </div>
+    </div>
+
+<table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Voter</th>
+      <th>Average votes/song</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Patrick McCluskey</td>
+      <td>2.15</td>
+    </tr>
+    <tr>
+      <td>Brett Brandes</td>
+      <td>2.11</td>
+    </tr>
+    <tr>
+      <td>nponta01</td>
+      <td>2.10</td>
+    </tr>
+  </tbody>
+</table>
+
+  </section>
+
+</main>
+</body>
+</html>
+
